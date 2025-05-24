@@ -44,4 +44,9 @@ wss.on("connection", (socket) => {
 
     })
 
+    socket.on("close",()=>{
+        allSocket = allSocket.filter((f)=>f.socket !== socket)
+        console.log("connection lost")
+    })
+
 })
